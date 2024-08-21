@@ -1,0 +1,12 @@
+C:\Users\LN\source\repos\WebAPI\Negocio\bin\Debug\net7.0\Negocio.deps.json
+C:\Users\LN\source\repos\WebAPI\Negocio\bin\Debug\net7.0\Negocio.dll
+C:\Users\LN\source\repos\WebAPI\Negocio\bin\Debug\net7.0\Negocio.pdb
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.AssemblyInfo.cs
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.dll
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\refint\Negocio.dll
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\Negocio.pdb
+C:\Users\LN\source\repos\WebAPI\Negocio\obj\Debug\net7.0\ref\Negocio.dll
