@@ -476,19 +476,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User01\\.nuget\\packages\\": {}
+    "C:\\Users\\LN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROYECTOS_VS\\WebAPI.net\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\LN\\Desktop\\Nueva carpeta\\WebAPI.net\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "D:\\PROYECTOS_VS\\WebAPI.net\\WebAPI\\WebAPI.csproj",
-      "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
-      "outputPath": "D:\\PROYECTOS_VS\\WebAPI.net\\WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\LN\\Desktop\\Nueva carpeta\\WebAPI.net\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\LN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LN\\Desktop\\Nueva carpeta\\WebAPI.net\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -502,8 +502,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\PROYECTOS_VS\\WebAPI.net\\Negocio\\Negocio.csproj": {
-              "projectPath": "D:\\PROYECTOS_VS\\WebAPI.net\\Negocio\\Negocio.csproj"
+            "C:\\Users\\LN\\Desktop\\Nueva carpeta\\WebAPI.net\\Negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Users\\LN\\Desktop\\Nueva carpeta\\WebAPI.net\\Negocio\\Negocio.csproj"
             }
           }
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Negocio;
 using Negocio.Models;
+using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,41 +12,80 @@ namespace WebAPI.Controllers
     public class ProductController : ControllerBase
     {
         ProductsAPI api = new ProductsAPI();
-        
+        List<Product> _productsList = new List<Product>();
+        Product _product = new Product();
+
         // GET: api/<ValuesController>
         [HttpGet]
-        public List<Product> Get()
+        public IActionResult Get()
         {
-            return api.GetAll();
-            
+            try
+            {
+                _productsList = api.GetAll();
+                return Ok(_productsList);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
         }
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public Product Get(int id)
+        public IActionResult Get(int id)
         {
-            return api.GetById(id);
+            try
+            {
+                _product = api.GetById(id);
+                return Ok(_product);
+
+            }catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public Product Post([FromBody] Product producto)
+        public IActionResult Post([FromBody] Product product)
         {
-            return api.Post(producto);
+            try 
+            {
+                _product = api.Post(product);
+                return StatusCode(201, _product);
+            }
+            catch (Exception ex) 
+            { 
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
         }
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public Product Put([FromBody] Product product)
+        public IActionResult Put([FromBody] Product product)
         {
-            return api.Put(product);
+            try
+            {
+                _product = api.Put(product);
+                return Ok(_product);
+            }catch (Exception ex) 
+            { 
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
         }
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
-        public Product Delete(int id)
+        public IActionResult Delete(int id)
         {
-            return api.Delete(id);
+            try 
+            {
+                _product = api.Delete(id);
+                return Ok(_product);
+            }catch (Exception ex)
+            { 
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
         }
     }
 }
