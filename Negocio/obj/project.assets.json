@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\LN\\.nuget\\packages\\": {}
+    "C:\\Users\\User01\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LN\\source\\repos\\WebAPI\\Negocio\\Negocio.csproj",
+      "projectUniqueName": "D:\\PROYECTOS_VS\\WebAPI.net\\Negocio\\Negocio.csproj",
       "projectName": "Negocio",
-      "projectPath": "C:\\Users\\LN\\source\\repos\\WebAPI\\Negocio\\Negocio.csproj",
-      "packagesPath": "C:\\Users\\LN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LN\\source\\repos\\WebAPI\\Negocio\\obj\\",
+      "projectPath": "D:\\PROYECTOS_VS\\WebAPI.net\\Negocio\\Negocio.csproj",
+      "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
+      "outputPath": "D:\\PROYECTOS_VS\\WebAPI.net\\Negocio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User01\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

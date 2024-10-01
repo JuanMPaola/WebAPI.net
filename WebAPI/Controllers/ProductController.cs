@@ -16,34 +16,36 @@ namespace WebAPI.Controllers
         [HttpGet]
         public List<Product> Get()
         {
-            var products = api.getAll();
-            return products;
+            return api.GetAll();
+            
         }
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            return api.getById(id);
+            return api.GetById(id);
         }
 
         // POST api/<ValuesController>
         [HttpPost]
         public Product Post([FromBody] Product producto)
         {
-            return api.post(producto);
+            return api.Post(producto);
         }
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public Product Put([FromBody] Product product)
         {
+            return api.Put(product);
         }
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Product Delete(int id)
         {
+            return api.Delete(id);
         }
     }
 }

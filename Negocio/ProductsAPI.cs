@@ -7,21 +7,30 @@ namespace Negocio
 {
     public class ProductsAPI
     {
-        public List<Product> getAll()
+        public List<Product> GetAll()
         {
-            Datos.agregar(new Product(1, "2", 5));
-            return Datos.listaProductos;
+            return Datos.productsList.OrderBy(item => item.id).ToList();
         }
-        public Product getById(int id)
+        public Product Post(Product producto)
         {
-            return new Product(1,"2",3);
-        }
-        public void update(Product producto){ }
-        public void delete(int id) {  }
-        public Product post(Product producto)
-        {
-            Datos.agregar(producto);
+            Datos.productsList.Add(producto);
             return producto;
+        }
+        public Product GetById(int id)
+        {
+            return Datos.productsList.Where(item => item.id == id).First();
+        }
+        public Product Delete(int id)
+        {
+            Datos.productsList.RemoveAll(item => item.id == id);
+            return Datos.productsList.Where(item => item.id == id).First();
+        }
+        public Product Put(Product prod)
+        {
+            var product = Datos.productsList.Where(item => item.id == prod.id).First();
+            Datos.productsList.Remove(product);
+            Datos.productsList.Add(prod);
+            return product;
         }
     }
 }

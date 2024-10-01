@@ -9,10 +9,6 @@ namespace Negocio
 {
     internal class Datos
     {
-        static public List<Product> listaProductos = new List<Product>() { };
-        static public void agregar(Product producto)
-        {
-            listaProductos.Add(producto);
-        }
+        static public List<Product> productsList = new List<Product>() { };
     }
 }
