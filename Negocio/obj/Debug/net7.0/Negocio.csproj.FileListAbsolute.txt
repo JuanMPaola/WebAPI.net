@@ -22,3 +22,15 @@ D:\PROYECTOS_VS\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.dll
 D:\PROYECTOS_VS\WebAPI.net\Negocio\obj\Debug\net7.0\refint\Negocio.dll
 D:\PROYECTOS_VS\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.pdb
 D:\PROYECTOS_VS\WebAPI.net\Negocio\obj\Debug\net7.0\ref\Negocio.dll
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\bin\Debug\net7.0\Negocio.deps.json
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\bin\Debug\net7.0\Negocio.dll
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\bin\Debug\net7.0\Negocio.pdb
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.csproj.AssemblyReference.cache
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.AssemblyInfo.cs
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.dll
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\refint\Negocio.dll
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.pdb
+C:\Users\LN\Desktop\Nueva carpeta\WebAPI.net\Negocio\obj\Debug\net7.0\ref\Negocio.dll
