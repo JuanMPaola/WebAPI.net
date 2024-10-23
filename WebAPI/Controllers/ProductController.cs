@@ -37,7 +37,14 @@ namespace WebAPI.Controllers
             try
             {
                 _product = api.GetById(id);
-                return Ok(_product);
+                if(_product != null)
+                {
+                    return Ok(_product);
+                }
+                else
+                {
+                    return Ok(new { Message = $"No product with id {id} was found." });
+                }
 
             }catch (Exception ex)
             {
@@ -78,12 +85,21 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            try 
+            try
             {
-                _product = api.Delete(id);
-                return Ok(_product);
-            }catch (Exception ex)
-            { 
+                bool isDeleted = api.Delete(id);
+
+                if (isDeleted)
+                {
+                    return Ok($"Product with id {id} was successfully deleted.");
+                }
+                else
+                {
+                    return Ok(new { Message = $"Could not delete product with id {id}." });
+                }
+            }
+            catch (Exception ex)
+            {
                 return StatusCode(500, "An error occurred: " + ex.Message);
             }
         }
