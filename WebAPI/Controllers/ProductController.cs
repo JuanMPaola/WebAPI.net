@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Negocio;
 using Negocio.Models;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -43,10 +44,12 @@ namespace WebAPI.Controllers
                 }
                 else
                 {
-                    return Ok(new { Message = $"No product with id {id} was found." });
+                    //return Ok(new { Message = $"No product with id {id} was found." });
+                    return NoContent();
                 }
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return StatusCode(500, "An error occurred: " + ex.Message);
             }
@@ -54,6 +57,7 @@ namespace WebAPI.Controllers
 
         // POST api/<ValuesController>
         [HttpPost]
+        [SwaggerRequestBody("The product to add", Required = true, Example = typeof(Product))]
         public IActionResult Post([FromBody] Product product)
         {
             try 
@@ -95,7 +99,8 @@ namespace WebAPI.Controllers
                 }
                 else
                 {
-                    return Ok(new { Message = $"Could not delete product with id {id}." });
+                    //return Ok(new { Message = $"Could not delete product with id {id}." });
+                    return NoContent();
                 }
             }
             catch (Exception ex)

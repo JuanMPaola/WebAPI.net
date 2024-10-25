@@ -15,22 +15,27 @@ namespace Negocio
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT Id, Name, Price FROM `Products`";
-                return conn.Query<Product>(sql).ToList();
+                string query = "SELECT Id, Name, Price FROM `Products`";
+                return conn.Query<Product>(query).ToList();
             };
         }
-        public Product Post(Product producto)
+        public Product Post(Product product)
         {
-            Datos.productsList.Add(producto);
-            return producto;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "INSERT INTO Products (Name, Price) VALUES (@Name, @Price)";
+                conn.Execute(query, new { Name = product.Name, Price = product.Price });
+                return product;
+            };
         }
         public Product GetById(int id)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT Id, Name, Price FROM `Products` WHERE Id = @Id";
-                return conn.QueryFirstOrDefault<Product>(sql, new { Id = id });
+                string query = "SELECT Id, Name, Price FROM `Products` WHERE Id = @Id";
+                return conn.QueryFirstOrDefault<Product>(query, new { Id = id });
             }
         }
         public bool Delete(int id)
@@ -42,8 +47,8 @@ namespace Negocio
 
                 if (prod != null)
                 {
-                    string sql = "DELETE FROM `Products` WHERE Id = @Id";
-                    int rowsAffected = conn.Execute(sql, new { Id = id });
+                    string query = "DELETE FROM `Products` WHERE Id = @Id";
+                    int rowsAffected = conn.Execute(query, new { Id = id });
 
                     // Devuelve `true` si el producto fue eliminado
                     return rowsAffected > 0;
@@ -55,12 +60,15 @@ namespace Negocio
                 }
             }
         }
-        public Product Put(Product prod)
+        public Product Put(Product product)
         {
-            var product = Datos.productsList.Where(item => item.Id == prod.Id).First();
-            Datos.productsList.Remove(product);
-            Datos.productsList.Add(prod);
-            return product;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "UPDATE Products SET Name = @Name, Price = @Price WHERE Id = @Id";
+                conn.Execute(query, new {Id = product.Id, Name = product.Name, Price = product.Price });
+                return product;
+            };
         }
     }
 }
