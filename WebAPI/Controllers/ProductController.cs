@@ -14,6 +14,7 @@ namespace WebAPI.Controllers
         ProductsAPI api = new ProductsAPI();
         List<Product> _productsList = new List<Product>();
         Product _product = new Product();
+        List<string> _categories = new List<string>();
 
         // GET: api/<ValuesController>
         [HttpGet()]
@@ -37,7 +38,7 @@ namespace WebAPI.Controllers
             try
             {
                 _product = api.GetById(id);
-                if(_product != null)
+                if (_product != null)
                 {
                     return Ok(_product);
                 }
@@ -46,7 +47,8 @@ namespace WebAPI.Controllers
                     return Ok(new { Message = $"No product with id {id} was found." });
                 }
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return StatusCode(500, "An error occurred: " + ex.Message);
             }
@@ -56,13 +58,13 @@ namespace WebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Product product)
         {
-            try 
+            try
             {
                 _product = api.Post(product);
                 return StatusCode(201, _product);
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 return StatusCode(500, "An error occurred: " + ex.Message);
             }
         }
@@ -75,8 +77,9 @@ namespace WebAPI.Controllers
             {
                 _product = api.Put(product);
                 return Ok(_product);
-            }catch (Exception ex) 
-            { 
+            }
+            catch (Exception ex)
+            {
                 return StatusCode(500, "An error occurred: " + ex.Message);
             }
         }
@@ -97,6 +100,35 @@ namespace WebAPI.Controllers
                 {
                     return Ok(new { Message = $"Could not delete product with id {id}." });
                 }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
+        }
+
+        [HttpGet("Categories")]
+        public IActionResult GetCategories()
+        {
+            try
+            {
+                _categories = api.GetCategories();
+                return Ok(_productsList);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred: " + ex.Message);
+            }
+        }
+
+        // POST api/<ValuesController>
+        [HttpPost("Categories")]
+        public IActionResult Post([FromBody] string category)
+        {
+            try
+            {
+                api.PostCategorie(category);
+                return StatusCode(201, category);
             }
             catch (Exception ex)
             {

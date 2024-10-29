@@ -25,11 +25,12 @@ namespace Negocio
             {
                 conn.Open();
                 string sql = "INSERT INTO Products (Title, Description, Category, Price) VALUES (@Title, @Description, @Category, @Price)";
-                return conn.QueryFirstOrDefault<Product>(sql, new { 
-                    Title = product.Title, 
-                    Description = product.Description, 
-                    Category = product.Category,  
-                    Price = product.Price 
+                return conn.QueryFirstOrDefault<Product>(sql, new
+                {
+                    Title = product.Title,
+                    Description = product.Description,
+                    Category = product.Category,
+                    Price = product.Price
                 });
             }
         }
@@ -68,6 +69,26 @@ namespace Negocio
             Datos.productsList.Remove(product);
             Datos.productsList.Add(prod);
             return product;
+        }
+
+        public List<string> GetCategories()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Categories";
+                return conn.Query<string>(sql).ToList();
+            };
+        }
+
+        public string PostCategorie(string category) 
+        { 
+            using (MySqlConnection conn = new MySqlConnection(connStr)) 
+            { 
+                conn.Open(); 
+                string sql = "INSERT INTO Categories (Category) VALUES (@Category);"; 
+                return conn.QueryFirstOrDefault<string>(sql, new { Category = category }); 
+            } 
         }
     }
 }
