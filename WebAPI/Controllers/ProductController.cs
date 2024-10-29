@@ -16,7 +16,7 @@ namespace WebAPI.Controllers
         Product _product = new Product();
 
         // GET: api/<ValuesController>
-        [HttpGet]
+        [HttpGet()]
         public IActionResult Get()
         {
             try

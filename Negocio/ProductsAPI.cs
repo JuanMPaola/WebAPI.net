@@ -9,27 +9,36 @@ namespace Negocio
 {
     public class ProductsAPI
     {
-        string connStr = "Server=sql10.freemysqlhosting.net;Database=sql10739703;Uid=sql10739703;Pwd=d4q6qAjJg6;";
+        string connStr = "Server=sql10.freemysqlhosting.net;Database=sql10741376;Uid=sql10741376;Pwd=vqRiz5UenI;";
         public List<Product> GetAll()
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT Id, Name, Price FROM `Products`";
+                string sql = "SELECT * FROM `Products`";
                 return conn.Query<Product>(sql).ToList();
             };
         }
-        public Product Post(Product producto)
+        public Product Post(Product product)
         {
-            Datos.productsList.Add(producto);
-            return producto;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "INSERT INTO Products (Title, Description, Category, Price) VALUES (@Title, @Description, @Category, @Price)";
+                return conn.QueryFirstOrDefault<Product>(sql, new { 
+                    Title = product.Title, 
+                    Description = product.Description, 
+                    Category = product.Category,  
+                    Price = product.Price 
+                });
+            }
         }
         public Product GetById(int id)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT Id, Name, Price FROM `Products` WHERE Id = @Id";
+                string sql = "SELECT * FROM `Products` WHERE Id = @Id";
                 return conn.QueryFirstOrDefault<Product>(sql, new { Id = id });
             }
         }
