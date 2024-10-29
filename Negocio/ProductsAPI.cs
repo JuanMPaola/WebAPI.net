@@ -54,12 +54,10 @@ namespace Negocio
                     string sql = "DELETE FROM `Products` WHERE Id = @Id";
                     int rowsAffected = conn.Execute(sql, new { Id = id });
 
-                    // Devuelve `true` si el producto fue eliminado
                     return rowsAffected > 0;
                 }
                 else
                 {
-                    // No se encontró el producto, por lo tanto no se eliminó nada
                     return false;
                 }
             }
