@@ -9,7 +9,7 @@ namespace Negocio
 {
     public class ProductsAPI
     {
-        string connStr = "Server=sql10.freemysqlhosting.net;Database=sql10741376;Uid=sql10741376;Pwd=vqRiz5UenI;";
+        string connStr = "Server=db4free.net;Database=lasnieves110424;Uid=lasnieves110424;Pwd=lasnieves110424";
         public List<Product> GetAll()
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -76,19 +76,19 @@ namespace Negocio
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT * FROM Categories";
+                string sql = "SELECT Category FROM Categories";
                 return conn.Query<string>(sql).ToList();
             };
         }
 
-        public string PostCategorie(string category) 
+        public int PostCategorie(string category) 
         { 
-            using (MySqlConnection conn = new MySqlConnection(connStr)) 
-            { 
-                conn.Open(); 
-                string sql = "INSERT INTO Categories (Category) VALUES (@Category);"; 
-                return conn.QueryFirstOrDefault<string>(sql, new { Category = category }); 
-            } 
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "INSERT INTO Categories (Category) VALUES (@Category);";
+                return conn.Execute(sql, new { Category = category });
+            }
         }
     }
 }

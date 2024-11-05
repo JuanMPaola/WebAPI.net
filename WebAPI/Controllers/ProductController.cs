@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/products")]
     [ApiController]
     public class ProductController : ControllerBase
     {
@@ -107,13 +107,13 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpGet("Categories")]
+        [HttpGet("categories")]
         public IActionResult GetCategories()
         {
             try
             {
                 _categories = api.GetCategories();
-                return Ok(_productsList);
+                return Ok(_categories);
             }
             catch (Exception ex)
             {
@@ -122,7 +122,7 @@ namespace WebAPI.Controllers
         }
 
         // POST api/<ValuesController>
-        [HttpPost("Categories")]
+        [HttpPost("categories")]
         public IActionResult Post([FromBody] string category)
         {
             try
